@@ -19,4 +19,8 @@ Published in NeuroImage 2022
 
 <img src="https://github.com/Mansooreh-Pakravan/MultiVariate-Effect-MVE-and-second-order-Multi-Variate-Effect-sMVE-for-fMRI-data/blob/main/MVE_vs_sMVE.png" width=75% height=75%>
 
+### License
+This project is free and open source for academic/research purposes (non-commercial).
 
+### Problems or questions
+If you have any problems or questions, please contact the author: Mansooreh Pakravan (email: mpakravan at modares dot ac dot ir)
