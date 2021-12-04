@@ -9,10 +9,10 @@ clear all
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Please cite to this paper if you use this Code ;)
 
-nSamples = [50:50:500];
+nSamples = [50:100:500];
 nVoxels = 20;
 SNR = 0;%[0,20];
-Niter = 100;
+Niter = 10;
 
 Ang = 3*pi/4;
 intr1 = 0.1;
@@ -25,7 +25,7 @@ Gperm = zeros(Niter,length(nSamples),length(nVoxels));
 Creal = zeros(Niter,length(nSamples),length(nVoxels));
 Cperm = zeros(Niter,length(nSamples),length(nVoxels));
 
-ndatsets = 99; %p-value=0.01 , for pvalue=0.001 -> set ndatsets=999
+ndatsets = 9; %p-value=0.1 for speed up , for pvalue=0.001 -> set ndatsets=999
 
 for iter =1:Niter
     for iT = 1:length(nSamples)
@@ -59,7 +59,7 @@ for iter =1:Niter
             Gperm(iter,iT,iV) = max(Gp0);
             
             %% Compute Multi-Variate Effect (sMVE) using Crossnobis distance
-            R = 20; % number of splittings
+            R = 5; % number of splittings
             C0 = zeros(1,R);
             Cp0 = zeros(1,R);    
             for r=1:R
