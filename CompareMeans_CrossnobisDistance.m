@@ -1,7 +1,6 @@
-function [Creal,Cperm] = CompareMeans_CrossnobisDistance(train_data,test_data,train_targets,test_targets,ndatsets)
+function [Creal,Cperm] = CompareMeans_CrossnobisDistance(Split1,Split2,Split1_targets,Split2_targets,ndatsets)
   
 %% Mansooreh Pakravan
-%% this function is in the format of a classifier
 
 %% inputs:
 % train_data = searchlight samples with size N (number of samples) x V
@@ -15,19 +14,16 @@ function [Creal,Cperm] = CompareMeans_CrossnobisDistance(train_data,test_data,tr
 % Creal = Crossnobis distance for original data
 % Cperm = Crossnobis distances for permuted data
 
-%% Original Paper for crossnobis distance: 
-%Walther, A., H. Nili, N. Ejaz, A. Alink, N. Kriegeskorte, and J. Diedrichsen, 2016: Reliability of dissimilarity measures for multi-voxel pattern analysis. Neuroimage, 137, 188–200.
-
-tr1 = find(train_targets==1);
-tr2 = find(train_targets==2);
-te1 = find(test_targets==1);
-te2 = find(test_targets==2);
+tr1 = find(Split1_targets==1);
+tr2 = find(Split1_targets==2);
+te1 = find(Split2_targets==1);
+te2 = find(Split2_targets==2);
 mt = min([length(tr1),length(tr2),length(te1),length(te2)]);
 
-xAtr = train_data(tr1(1:mt),:);
-xBtr = train_data(tr2(1:mt),:);        
-xAte = test_data(te1(1:mt),:);
-xBte = test_data(te2(1:mt),:);
+xAtr = Split1(tr1(1:mt),:);
+xBtr = Split1(tr2(1:mt),:);        
+xAte = Split2(te1(1:mt),:);
+xBte = Split2(te2(1:mt),:);
         
 Creal = Crossnobis_Core(xAtr,xBtr,xAte,xBte);
 
