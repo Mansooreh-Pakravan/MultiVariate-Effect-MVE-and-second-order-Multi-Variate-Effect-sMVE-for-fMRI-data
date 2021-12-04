@@ -4,13 +4,13 @@ function [Creal,Cperm] = CompareMeans_CrossnobisDistance(Split1,Split2,Split1_ta
 
 %% inputs:
 % Split1 = searchlight samples with size N (number of samples) x V
-% (numer of voxels or features) for Split1
+% (number of voxels or features) for Split1
 % Split1_targets = corresponding labels with size 1xN
 %Split2 = searchlight samples with size N (number of samples) x V
-% (numer of voxels or features) for Split2
+% (number of voxels or features) for Split2
 % Split2_targets = corresponding labels with size 1xN
 
-%% ouputs:
+%% outputs:
 % Creal = Crossnobis distance for original data
 % Cperm = Crossnobis distances for permuted data
 
