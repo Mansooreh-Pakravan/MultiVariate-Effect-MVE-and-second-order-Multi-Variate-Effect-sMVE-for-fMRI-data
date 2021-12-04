@@ -3,3 +3,6 @@ Matlab codes to compute MultiVariate Effect (MVE) based on Crossnobis distance a
 
 Authors: Mansooreh Pakravan, Mojtaba Abbaszadeh and Ali Ghazizadeh
 Published in NeuroImage 2022
+
+
+![alt text](https://github.com/Mansooreh-Pakravan/MultiVariate-Effect-MVE-and-second-order-Multi-Variate-Effect-sMVE-for-fMRI-data/blob/main/MVE_vs_sMVE.png?raw=true)
