@@ -9,9 +9,11 @@ Procedure:
   1) Preprocess your fMRI data 
   2) Conduct GLM analysis to extract the residuals
   3) Use CosMoMVPA toolbox to extract BOLD values in each searchlight (https://github.com/CoSMoMVPA/CoSMoMVPA)
-  4) Concatenate the blocks of each task condition to make one matrix for each condition (size  of the matrices: the number of TRs x number of voxels in the searchlight, Y1 and Y2 in the functions)
-  5) Compute Crossnobis distance from  BOLD signal (MVE) and Geodesic distance from GLM residuals (sMVE) for each searchlight
-  6) Plot a brain-wide map of MVE and sMVE activation 
+  4) Concatenate the blocks of each task condition to make one matrix for each condition (size  of the matrices: the number of TRs x number of voxels in the searchlight, the same Y1 and Y2 in the input of functions)
+  5) Compute Crossnobis distance from  BOLD signal (MVE) with using "CompareMeans_CrossnobisDistance.m" function  
+  6) Compute Geodesic distance from GLM residuals (sMVE) with using "CompareCovariances_GeodesicDistance.m" function
+  7) Repeat 5 and 6 steps for all of the searchlights
+  8) Plot a brain-wide map of MVE and sMVE activations 
   
 
 <img src="https://github.com/Mansooreh-Pakravan/MultiVariate-Effect-MVE-and-second-order-Multi-Variate-Effect-sMVE-for-fMRI-data/blob/main/MVE_vs_sMVE.png" width=75% height=75%>
