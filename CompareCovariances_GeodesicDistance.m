@@ -1,4 +1,4 @@
-function [Greal,Gperm] = CompareCovariances_GeodesicDistance(Y1,Y2,ndatsets)
+function [Greal,Gperm] = CompareCovariances_GeodesicDistance(Y1,Y2,nShuffling)
 
 %% Mansooreh Pakravan 
 
@@ -6,10 +6,11 @@ function [Greal,Gperm] = CompareCovariances_GeodesicDistance(Y1,Y2,ndatsets)
 % Y1 = BOLD activities of the searchlight for condition 1
 % Y2 = BOLD activities of the searchlight for condition 2 
 % The dimension of Y1 and Y2 are N(number of samples) x V(number of voxels in the searchlight)
+% nShuffling = number of permutation tests (or shufflings)
 
 %% outputs:
-% Greal = Geodesic distance for original data
-% Gperm = Geodesic distances for permuted data
+% Greal = Geodesic distance for original data (1 x 1)
+% Gperm = Geodesic distances for permuted data (1 x nShuffling)
 
 % remove mean effect
 Y1 = bsxfun(@minus,Y1,mean(Y1));
@@ -17,8 +18,8 @@ Y2 = bsxfun(@minus,Y2,mean(Y2));
 
 Greal = Compute_Comapre_Covarinaces(Y1,Y2);
 
-Gperm = zeros(1,ndatsets);
-for nds = 1:ndatsets
+Gperm = zeros(1,nShuffling);
+for nds = 1:nShuffling
 
     [PermX1,PermX2] = Shuffling_Samples(Y1,Y2);
     Gperm(nds)= Compute_Comapre_Covarinaces(PermX1,PermX2);  
