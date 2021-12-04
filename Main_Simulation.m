@@ -6,6 +6,11 @@ clear all
 % % Coordinated multivoxel coding beyond univariate effects is not likely to be observable in fMRI data 
 % % Authors: Mansooreh Pakravan, Mojtaba Abbaszadeh and Ali Ghazizadeh
 % % Published in NeuroImage 2022
+
+%% 
+% This script simply generates two clouds of data (Y1 and Y2) with normal distribution and predefined different mean and covariance matrices for each of Y1 and Y2.
+% it calls CompareMeans_CrossnobisDistance.m and CompareCovariances_GeodesicDistance.m functions to compute MVE and sMVE from these simulated data and plot the results versus the number of samples.
+
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Please cite to this paper if you use this Code ;)
 
