@@ -17,7 +17,7 @@ Published in NeuroImage 2022
   8) Plot a brain-wide map of MVE and sMVE activations 
   
 
-<img src="https://github.com/Mansooreh-Pakravan/MultiVariate-Effect-MVE-and-second-order-Multi-Variate-Effect-sMVE-for-fMRI-data/blob/main/MVE_vs_sMVE.png" width=75% height=75%>
+<img src="https://github.com/Mansooreh-Pakravan/MultiVariate-Effect-MVE-and-second-order-Multi-Variate-Effect-sMVE-for-fMRI-data/blob/main/MVE_vs_sMVE.png" width=50% height=50%>
 
 ### License
 This project is free and open source for academic/research purposes (non-commercial).
