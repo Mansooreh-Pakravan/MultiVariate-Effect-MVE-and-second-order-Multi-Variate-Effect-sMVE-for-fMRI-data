@@ -1,17 +1,18 @@
-function [Creal,Cperm] = CompareMeans_CrossnobisDistance(Split1,Split2,Split1_targets,Split2_targets,ndatsets)
+function [Creal,Cperm] = CompareMeans_CrossnobisDistance(Split1,Split2,Split1_targets,Split2_targets,nShuffling)
   
 %% Mansooreh Pakravan
+%% this function is in the format of a classifier
 
 %% inputs:
 % Split1 = searchlight samples with size N (number of samples) x V
-% (number of voxels or features) for Split1
+% (numer of voxels or features) for Split1
 % Split1_targets = corresponding labels with size 1xN
 %Split2 = searchlight samples with size N (number of samples) x V
-% (number of voxels or features) for Split2
+% (numer of voxels or features) for Split2
 % Split2_targets = corresponding labels with size 1xN
-% ndatsets = number of permutation tests (or shufflings)
+% nShuffling = number of permutation tests (or shufflings)
 
-%% outputs:
+%% ouputs:
 % Creal = Crossnobis distance for original data
 % Cperm = Crossnobis distances for permuted data
 
@@ -28,8 +29,8 @@ xBte = Split2(te2(1:mt),:);
         
 Creal = Crossnobis_Core(xAtr,xBtr,xAte,xBte);
 
-Cperm = zeros(1,ndatsets);
-for nds = 1:ndatsets
+Cperm = zeros(1,nShuffling);
+for nds = 1:nShuffling
 
     %% permuting the data
     xtr = [xAtr;xBtr];
