@@ -1,5 +1,6 @@
 clc
 clear all
+close All
 
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % % Matlab codes to compute MultiVariate Effect (MVE) and second-order Multi-Variate Effect (sMVE) explained in the paper:
